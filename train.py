@@ -41,7 +41,6 @@ def train():
 
 
 train()
-print('---------------Training done ---------------')
 
 features = np.array(features, dtype='object')
 labels = np.array(labels)
@@ -50,6 +49,8 @@ face_recognizer = cv.face.LBPHFaceRecognizer_create()
 
 # Train the Recognizer on the features list and the labels list
 face_recognizer.train(features,labels)
+
+print('---------------Training done ---------------')
 
 face_recognizer.save('face_trained.yml')
 np.save('features.npy', features)
